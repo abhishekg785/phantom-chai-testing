@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pay Scale Calculator</title>
+		<style>
+		    .center
+			{
+			    position: absolute;
+				left: 35%;
+				top: 35%;
+			}
+			td
+			{
+			    padding:5px;
+			}
+		</style>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+        function changevalue()
+        {
+            var temp=document.getElementById("base_salary").value*2.57 + document.getElementById("hra").value*1.2 + document.getElementById("travelling_allowance").value*1.4 + document.getElementById("other_allowance").value*1.0;
+			      document.getElementById("noti").innerHTML = temp;
+            document.getElementById("result").value = temp;
+        }
+        </script>
+        <div class="center">
+            <table>
+                <tr>
+                    <td>Base Salary</td>
+                    <td><input id="base_salary" type="number" value="0" onchange="changevalue()"></td>
+                </tr>
+				        <tr>
+                    <td>HRA</td>
+                    <td><input id="hra" type="number" value="0" onchange="changevalue()"></td>
+                </tr>
+				        <tr>
+                    <td>Travelling Allowance</td>
+                    <td><input id="travelling_allowance" type="number" value="0" onchange="changevalue()"></td>
+                </tr>
+				        <tr>
+                    <td>Other Allowances</td>
+                    <td><input id="other_allowance" type="number" value="0" onchange="changevalue()"></td>
+                </tr>
+            </table>
+            <input type="hidden" id = "result" value="0"/>
+            <h4> Congrats!!! Your new pay is <span id = "noti">0</span>. </h4>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+node htmlCutter.js > user_out.out | fc output.out user_out.out
